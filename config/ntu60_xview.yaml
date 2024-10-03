@@ -1,4 +1,12 @@
-work_dir: work_dir/n_ucla/joint_bone
+# work_dir: work_dir/ntu60/xview/joint
+# work_dir: work_dir/ntu60/xview/joint_motion
+# work_dir: work_dir/ntu60/xview/bone
+# work_dir: work_dir/ntu60/xview/bone_motion
+work_dir: work_dir/ntu60/xview/joint_bone
+# work_dir: work_dir/ntu60/xview/joint_motion_bone_motion
+# work_dir: work_dir/ntu60/xview/bone_bone_motion
+# work_dir: work_dir/ntu60/xview/joint_joint_motion
+
 num_epoch: 100
 cuda: True
 device: 0
@@ -6,13 +14,13 @@ device: 0
 # MODEL
 model_args:
   model_name: agms_gcn.Model
-  num_classes: 10
+  num_classes: 60
   input_channels: 6 #3
   residual: True
   dropout: 0.5
-  num_person: 1
-  graph: graph.n_ucla.Graph  
-  num_node: 20
+  num_person: 2
+  graph: graph.ntu_rgb_d.Graph  
+  num_nodes: 25
 
 # OPTIMIZER
 optimizer_args:
@@ -29,14 +37,14 @@ optimizer_args:
 # TRAIN TEST FEEDER
 feeder: feeders.feeder.Feeder
 train_feeder_args:  
-  data_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/n_ucla/train_data_joint_bone.npy
-  label_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/n_ucla/train_label.pkl
+  data_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/NTU/ntu60/xview/train_data_joint_bone.npy
+  label_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/NTU/ntu60/xview/train_label.pkl
   normalization: False
   random_shift: False
   random_choose: False
   random_move: False 
   window_size: -1
-  batch_size: 16
+  batch_size: 64
   num_worker: 0
   
   

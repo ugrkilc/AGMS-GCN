@@ -1,0 +1,65 @@
+# work_dir: work_dir/ntu120/xsetup/joint
+# work_dir: work_dir/ntu120/xsetup/joint_motion
+# work_dir: work_dir/ntu120/xsetup/bone
+# work_dir: work_dir/ntu120/xsetup/bone_motion
+work_dir: work_dir/ntu120/xsetup/joint_bone
+# work_dir: work_dir/ntu120/xsetup/joint_motion_bone_motion
+# work_dir: work_dir/ntu120/xsetup/bone_bone_motion
+# work_dir: work_dir/ntu120/xsetup/joint_joint_motion
+
+
+
+num_epoch: 100
+cuda: True
+device: 0
+
+# MODEL
+model_args:
+  model_name: agms_gcn.Model
+  num_classes: 120
+  input_channels: 6 #3
+  residual: True
+  dropout: 0.5
+  num_person: 2
+  graph: graph.ntu_rgb_d.Graph  
+  num_node: 25
+
+# OPTIMIZER
+optimizer_args:
+  optimizer: SGD
+  base_lr: 0.1
+  lr_step: [35,60,75]
+  momentum: 0.9
+  nesterov: True
+  weight_decay: 0.0004 #0.0005
+  warm_up_epoch: 5
+  cosine_epoch: 60
+
+
+# TRAIN TEST FEEDER
+feeder: feeders.feeder.Feeder
+train_feeder_args:  
+  data_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/NTU/ntu120/xsetup/train_data_joint_bone.npy
+  label_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/NTU/ntu120/xsetup/train_label.pkl
+  normalization: False
+  random_shift: False
+  random_choose: False
+  random_move: False 
+  window_size: -1
+  batch_size: 64
+  num_worker: 0
+  
+  
+test_feeder_args:
+  data_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/NTU/ntu120/xsetup/val_data_joint_bone.npy
+  label_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/NTU/ntu120/xsetup/val_label.pkl
+  normalization: False
+  random_shift: False
+  random_choose: False
+  random_move: False 
+  window_size: -1
+  batch_size: 64
+  num_worker: 0
+
+
+
