@@ -12,7 +12,7 @@ model_args:
   dropout: 0.5
   num_person: 1
   graph: graph.n_ucla.Graph  
-  num_node: 20
+  num_nodes: 20
 
 # OPTIMIZER
 optimizer_args:
