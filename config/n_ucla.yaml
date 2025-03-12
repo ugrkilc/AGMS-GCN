@@ -50,8 +50,8 @@ train_feeder_args:
   
   
 test_feeder_args:
-  data_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/NTU/ntu60/xview/val_data_joint_bone.npy
-  label_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/NTU/ntu60/xview/val_label.pkl
+  data_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/n_ucla/val_data_joint_bone.npy
+  label_path: C:/Users/ugurk/Desktop/WORKSPACE/Dataset/n_ucla/val_label.pkl
   normalization: False
   random_shift: False
   random_choose: False
