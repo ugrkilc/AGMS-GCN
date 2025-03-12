@@ -1,4 +1,13 @@
+# work_dir: work_dir/n_ucla/joint
+# work_dir: work_dir/n_ucla/joint_motion
+# work_dir: work_dir/n_ucla/bone
+# work_dir: work_dir/n_ucla/bone_motion
 work_dir: work_dir/n_ucla/joint_bone
+# work_dir: work_dir/n_ucla/joint_motion_bone_motion
+# work_dir: work_dir/n_ucla/bone_bone_motion
+# work_dir: work_dir/n_ucla/joint_joint_motion
+
+
 num_epoch: 100
 cuda: True
 device: 0
